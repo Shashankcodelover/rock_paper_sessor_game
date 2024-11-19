@@ -1,0 +1,89 @@
+from random import *
+
+print("thank you for choiceing rock paper scissors! Game \n Lets play ")
+print("\n "
+      "the posible outcomes for\n"
+      "Rock, Paper, Scissor Game are\n\n"
+      "Rock VS Scissor >> Rock wins\n"
+      "Rock VS Paper >> paper wins\n"
+      "Papper VS Scissor >> Scissor wins\n")
+print("enter your name ")
+name = input('>>')
+print("hi",name,"lets play")
+print("the second player is computer ")
+while True:
+    i=0
+    j, k = 0, 0
+    while i<5:
+
+        print("\n hi ",name,"\n enter you choice \n"
+                            "1-Rock\n"
+                            "2-Paper\n"
+                            "3-Scissor")
+        user_choice = input(">>")
+        if user_choice == "1":
+            user_choice = "Rock"
+
+        elif user_choice == "2":
+            user_choice = "Paper"
+
+        elif user_choice == "3":
+            user_choice = "Scissor"
+
+        else:
+            print("invalid input")
+            continue
+        print("\n your choice is ",user_choice)
+
+        computer_choice = randint(1,3)
+        if computer_choice == 1:
+            computer_choice = "Rock"
+
+        elif computer_choice == 2:
+            computer_choice = "Paper"
+
+        elif computer_choice == 3:
+            computer_choice = "Scissor"
+
+        else:
+            print("invalid input")
+            continue
+
+        print("\n computer choice is ",computer_choice)
+        print("comouter choice VS your choice is\n")
+
+        if user_choice == computer_choice:
+            result="Draw"
+        elif (computer_choice == "Rock" and user_choice=="Paper") or (computer_choice == "Paper" and user_choice=="Rock"):
+            result="Paper"
+        elif (computer_choice == "Rock" and user_choice=="Scissor") or (computer_choice == 3 and user_choice=="Rock"):
+            result="Rock"
+        elif (computer_choice == "Paper" and user_choice=="Scissor") or (computer_choice == "Scissor" and user_choice=="Paper"):
+            result="Scissor"
+
+        if result == "Draw":
+            print(">> Oh no! ,It is tie ")
+
+        elif result == user_choice:
+            print('\n>>Yes you Won!')
+            j+=1
+
+        elif result == computer_choice:
+            print('\n>>You Loose!\n computer Wins!')
+            k+=1
+
+        i+=1
+    print("\n result after 5 round ")
+    if j==k:
+        print("\n this Game was Draw ")
+        break
+    elif j>k:
+        print("\n this Game is won by you ")
+        break
+    elif k>j:
+        print("\n this Game was won by computer  ")
+        break
+    else:
+        print("invalid input")
+
+print("\n Thank You for playing ")
